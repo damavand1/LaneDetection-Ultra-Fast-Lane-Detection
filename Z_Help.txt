@@ -1,0 +1,45 @@
+Intori nasbesh konam
+
+first Install Cuda 11.8 from nvidia web site
+https://developer.nvidia.com/cuda-11-8-0-download-archive
+
+
+** dar mostanadate khodesh gofte python 3.7 vali va mashverat ba chatGPT 3.10 nasb kardim va ok kar kard
+** haminur dar mostanadate khodesh neveshte cuda 10.1 vali zaherean in ruge GPU 3060 kar nemikone va umadim cuda 11.8 
+** nasb kardim va kar ham kard va razi hastim
+
+
+
+
+git clone https://github.com/cfzd/Ultra-Fast-Lane-Detection
+cd Ultra-Fast-Lane-Detection
+conda create -n lane-det python=3.10 -y
+conda activate lane-det
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda)"
+
+
+
+-> in bar midare va hameye ax haye dataset ro rushun model ro ejra mikone va hameye frame haro mizare poshte sare ha va yek video misaze !!!
+
+
+(ghablesh bayad data set masalan Tusimple ro extract va tanzimatesh ro motabeghe doc anjam bedim)
+
+python demo.py configs/tusimple.py --test_model "D:\0Kahroba-motors\0 Kahroba VisualCortex\Lane (boundaries)\02 Ultra-Fast-Lane-Detection\Ultra-Fast-Lane-Detection\tusimple_18.pth"
+
+
+
+
+
+
+python test.py configs/tusimple.py --test_model "D:\0Kahroba-motors\0 Kahroba VisualCortex\Lane (boundaries)\02 Ultra-Fast-Lane-Detection\Ultra-Fast-Lane-Detection\tusimple_18.pth" --test_work_dir ./tmp
+
+
+
+
+
+
+
+
+python scripts/convert_tusimple.py --root 'D:\0Kahroba-motors\0 Kahroba VisualCortex\Z Datasets\Tusimple\archive\TUSimple'
