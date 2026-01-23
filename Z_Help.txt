@@ -37,8 +37,8 @@ python test.py configs/tusimple.py --test_model "D:\0Kahroba-motors\0 Kahroba Vi
 
 
 
-
-
+running video (no need to dataset extraction and ...)
+python video.py configs/tusimple.py
 
 
 
